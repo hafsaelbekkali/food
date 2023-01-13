@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from 'react';
+import Home from './components/Home';
+import ThemeButton from './components/Theme';
+
+
+export const ThemeContext = createContext(null)
 
 function App() {
+
+  const [theme,setTheme] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ThemeContext.Provider value={{theme,setTheme}}>
+    <div className=" bg-white min-h-screen p-2 " style={theme ?{ backgroundColor:"#000"}:{}}>
+      <ThemeButton/>
+      <Home />
     </div>
+    </ThemeContext.Provider>
   );
 }
 

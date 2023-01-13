@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+body::-webkit-scrollbar{width: 10px;}
+body::-webkit-scrollbar-track {background: white; border-radius: 5px;}
+body::-webkit-scrollbar-thumb {background: rgb(229, 112, 3); border-radius: 5px;}
+
+::selection{
+  color: black;
+  background-color: orange;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input::placeholder{
+  color: black;
+  font-style: italic;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  color: #fff;
+}
+
+.item{
+  box-shadow: 4px 4px 2px 3px black , -3px -3px 3px black;
+
+}
+.item:hover{
+  box-shadow: 5px 5px 9px rgb(229, 112, 3) , -6px -6px 10px rgb(229, 112, 3);
+  transform: scale(1.05);
+  transition: .5s;
+}
+
+.loader {
+  text-shadow: 0 0 4px #FFF, 0 0 6px #FFF, 0 0 4px #FFF;
+  letter-spacing: 20px;
+}
+h1{
+  text-shadow: 1px 0 2px black, 0 0 6px #FFF, 3px 0 4px white; ;
+}
+
+.bi-lightbulb-fill{
+  transform: rotate(190deg);
+  transition: .5s;
+  
 }
